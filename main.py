@@ -101,7 +101,7 @@ amazon_cart = [
 # new_list = amazon_cart.insert(3, 100)
 
 # extend extends the list with iterable data in place
-amazon_cart.extend([100, 101])
+#amazon_cart.extend([100, 101])
 # print (new_list)
 #print (amazon_cart)
 
@@ -115,8 +115,28 @@ amazon_cart.extend([100, 101])
 #print(amazon_cart)
 
 #clear () clears entire the list
-print(amazon_cart.clear())
-print(amazon_cart)
+#print(amazon_cart.clear())
+#print(amazon_cart)
 
+#index methond in list
+#index (value, start, stop) return first occurance of value
+basket = [1,2,3,6,5,8,0,4]
 
+print(basket)
 
+print(basket.index(4))
+
+# sort the list in ascending order
+#basket.sort()
+
+# reverse() reverses the indices in list
+#basket.reverse()
+print (basket)
+
+print(list(range(100)))
+
+sentence = ''
+
+new_sentence = sentence.join(['hi', 'my', 'name', 'is', 'prath'])
+
+print(new_sentence)

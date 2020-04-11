@@ -61,3 +61,27 @@ amazon_cart.extend([100, 101])
 #clear () clears entire the list
 print(amazon_cart.clear())
 print(amazon_cart)
+
+#index methond in list
+#index (value, start, stop) return first occurance of value
+basket = [1,2,3,7,5,8,0]
+
+#print(basket)
+
+#print(basket.index(4))
+
+#sort() sorts list in ascending order and returns None
+basket.sort()
+print(basket)
+
+# reverse() reverses the indices in list
+#basket.reverse()
+
+print(list(range(100)))
+
+sentence = ''
+
+new_sentence = sentence.join(['hi', 'my', 'name', 'is', 'prath'])
+
+print(new_sentence)
+
