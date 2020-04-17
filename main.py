@@ -120,23 +120,59 @@ amazon_cart = [
 
 #index methond in list
 #index (value, start, stop) return first occurance of value
-basket = [1,2,3,6,5,8,0,4]
+#basket = [1,2,3,6,5,8,0,4]
 
-print(basket)
+#print(basket)
 
-print(basket.index(4))
+#print(basket.index(4))
 
 # sort the list in ascending order
 #basket.sort()
 
 # reverse() reverses the indices in list
 #basket.reverse()
-print (basket)
+#print (basket)
 
-print(list(range(100)))
+#print(list(range(100)))
 
-sentence = ''
+#sentence = ''
 
-new_sentence = sentence.join(['hi', 'my', 'name', 'is', 'prath'])
+#new_sentence = sentence.join(['hi', 'my', 'name', 'is', 'prath'])
 
-print(new_sentence)
+#print(new_sentence)
+
+
+# Dictionary
+# is an unoredered key value pairs
+# key can be any immutable object i.e. key can not change
+# keys in dictionary has to be unique
+# value can be of any data type , it can be list, string, int or boolean Value
+
+mydict = {
+    'a': [4,5,3],
+    'b': "Hello World",
+    'c': True,
+    123: [7,8,9],
+    'age': 29
+#    [5]: "This is not allowd as list is mutable object"
+}
+
+print(mydict)
+print(mydict['a'][1])
+print(mydict[123])
+
+# Dictinoary methods
+# get method is used to get access keys to see if they exist and get the value
+print(mydict.get('c'))
+
+# this would normally result in error as key doesn't exist
+# but with get it returns None is key is not present otherwise returns value
+print(mydict.get('hey'))
+
+# here we set default value in case key is not present, if it is present it will print actual value 
+print(mydict.get('age', 30))
+
+# another way to create dictionary
+user2 = dict(name='Pratham', last_name='Rahate')
+print(user2)
+print(user2['last_name'])
