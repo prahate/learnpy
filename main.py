@@ -217,16 +217,35 @@ mytuple = (23,'Prath', True, 23)
 
 # Following statement is invalid as tuples are immutable
 #mytuple[1] = 'z'
-print(mytuple[0])
+#print(mytuple[0])
 
 # since tuples are immutable they can be used as keys for dictionary
 # tuples are faster than list and they can be used when we dont require values in the list to be modified
 
 #count methods counts the occurance of value in tuple
-print(mytuple.count(23))
+#print(mytuple.count(23))
 
 # index method gives the index of the value if present is tuple
-print(mytuple.index(True))
+#print(mytuple.index(True))
 
-print(len(mytuple))
+#print(len(mytuple))
+
+
+#set
+# set is an unordered collection of unique objects
+myset = {1,2,3,4,5,5}
+
+# in set every thing is unique, if there are repeated values in set then it will be considered once
+#print(myset)
+
+# add values to set
+myset.add(100)
+print(myset)
+
+# lets say we have array with duplicate items and print it only non-repated item
+#myarr = [1,2,3,4,5,6,6,6,7,7]
+#print(set(myarr))
+
+# following is invalid sets does not support indexing
+#print(myset[0])
 
