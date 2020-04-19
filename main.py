@@ -173,6 +173,40 @@ print(mydict.get('hey'))
 print(mydict.get('age', 30))
 
 # another way to create dictionary
-user2 = dict(name='Pratham', last_name='Rahate')
+user2 = dict(name='Pratham', last_name='Rahate', age=29)
 print(user2)
 print(user2['last_name'])
+
+# in used same way as incae of list
+print('name' in user2)
+
+# check key in key of dictionary
+print('name' in user2.keys())
+
+# check values in dictionary
+print('rahate' in user2.values())
+
+#prints items in dictionary
+print(user2.items())
+
+# copy ceates copy of ditctionary
+user3 = user2.copy()
+print(user3)
+
+#clear clears the ditctionary
+#print(user2.clear())
+
+#pop pos the item from dictionary also removes the key from dictionary
+#print(user2.pop('age'))
+#print('age' in user2.keys())
+
+# popitems randomy pops item in dictionary
+#print(user2.popitem())
+
+#update updates value for Key
+# if the obejct is not in dictionary it will update dictionary with object
+user2.update({'age':30})
+print(user2)
+
+user2.update({'Location':'Mumbai'})
+print(user2)
