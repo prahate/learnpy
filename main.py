@@ -157,41 +157,41 @@ mydict = {
 #    [5]: "This is not allowd as list is mutable object"
 }
 
-print(mydict)
-print(mydict['a'][1])
-print(mydict[123])
+#print(mydict)
+#print(mydict['a'][1])
+#print(mydict[123])
 
 # Dictinoary methods
 # get method is used to get access keys to see if they exist and get the value
-print(mydict.get('c'))
+#print(mydict.get('c'))
 
 # this would normally result in error as key doesn't exist
 # but with get it returns None is key is not present otherwise returns value
-print(mydict.get('hey'))
+#print(mydict.get('hey'))
 
 # here we set default value in case key is not present, if it is present it will print actual value 
-print(mydict.get('age', 30))
+#print(mydict.get('age', 30))
 
 # another way to create dictionary
 user2 = dict(name='Pratham', last_name='Rahate', age=29)
-print(user2)
-print(user2['last_name'])
+#print(user2)
+#print(user2['last_name'])
 
 # in used same way as incae of list
-print('name' in user2)
+#print('name' in user2)
 
 # check key in key of dictionary
-print('name' in user2.keys())
+#print('name' in user2.keys())
 
 # check values in dictionary
-print('rahate' in user2.values())
+#print('rahate' in user2.values())
 
 #prints items in dictionary
-print(user2.items())
+#print(user2.items())
 
 # copy ceates copy of ditctionary
 user3 = user2.copy()
-print(user3)
+#print(user3)
 
 #clear clears the ditctionary
 #print(user2.clear())
@@ -205,8 +205,28 @@ print(user3)
 
 #update updates value for Key
 # if the obejct is not in dictionary it will update dictionary with object
-user2.update({'age':30})
-print(user2)
+#user2.update({'age':30})
+#print(user2)
 
-user2.update({'Location':'Mumbai'})
-print(user2)
+#user2.update({'Location':'Mumbai'})
+#print(user2)
+
+# tuples
+# tuples are immutable lists
+mytuple = (23,'Prath', True, 23)
+
+# Following statement is invalid as tuples are immutable
+#mytuple[1] = 'z'
+print(mytuple[0])
+
+# since tuples are immutable they can be used as keys for dictionary
+# tuples are faster than list and they can be used when we dont require values in the list to be modified
+
+#count methods counts the occurance of value in tuple
+print(mytuple.count(23))
+
+# index method gives the index of the value if present is tuple
+print(mytuple.index(True))
+
+print(len(mytuple))
+
