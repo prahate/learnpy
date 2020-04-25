@@ -316,9 +316,157 @@ mytuple = (23,'Prath', True, 23)
 # for Loop
 # here items is similar to i
 # and 'Hello world' cna be any iterable object
-for items in 'Hello World':
-    for i in [1,2]:
-        print(items, i)
+#for items in 'Hello World':
+#    for i in [1,2]:
+#        print(items, i)
 
 #for i in [1,2,3,4,5]:
 #    print(i)
+
+# iterating over dictionaries
+#my_dict ={
+#    'name' :"Prathames",
+#    'last_name': "Rahate",
+#    'age':29,
+#    'is_single': False
+#}
+
+# if we ietrate the following way it will only iterate over key in dictionary
+# we can use dictionary methods like keys(), items() and values() for interating over dictionary keys, data and values
+# see below examples
+#for items in my_dict:
+#    print(items)
+
+# this prints dictionary entires as tuples
+#for items in my_dict.items():
+#    print(items)
+# another way to print dictionary entries not as tuples is
+#for key, value in my_dict.items():
+#    print(key, value)
+
+# iterate over keys in dictionary
+#for items in my_dict.keys():
+#    print(items)
+
+# iterate over items in dictionary
+#for items in my_dict.values():
+#    print(items)
+
+
+#my_list = [1,2,3,4,5,6,7,8,9,10]
+#total =0
+#for i in my_list:
+#    total = total + i
+
+#print(total)
+
+# range(start, end, increment) is useful in for loops
+#for item in range(0,15, 2):
+#    print(item)
+
+# to print numbers in reverse
+#for item in range(10, 0, -1):
+#    print(item)
+
+#range can also be used to create list of intergers
+#print(list(range(1,10)))
+#print(list(range(0,10,2)))
+
+
+# enumerate takes an iterable obejct as input and returns the index of value in iterable object
+# here i is index returned from enumerate
+#for i, char in enumerate('Hellloooo'):
+#    print(i,char)
+
+#for i, char in enumerate(list(range(100))):
+#    if char == 50:
+#        print(f'index of 50 is :{i}')
+
+
+# while loop
+#i=0
+#while i < 10:
+#    print(i)
+#    i = i+1
+
+# use of while Loop
+#while True:
+#    response = input('Say something :')
+#    if response == 'bye':
+#        break
+
+picture = [
+    [0,0,0,1,0,0,0],
+    [0,0,1,1,1,0,0],
+    [0,1,1,1,1,1,0],
+    [1,1,1,1,1,1,1],
+    [0,0,0,1,0,0,0],
+    [0,0,0,1,0,0,0]
+]
+
+for row in picture:
+    for pixel in row:
+        if pixel == 0:
+            print(' ', end='')
+        elif pixel == 1:
+            print('*', end='')
+    print('')
+
+
+
+some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
+duplicate = []
+for value in some_list:
+    if some_list.count(value) > 1:
+        if value not in duplicate:
+            duplicate.append(value)
+
+print(duplicate)
+
+# functions
+# functions in python starts with def keyword, this tells interpreter it is function
+# name and emoji are parameters that say_hello function takes
+
+def say_hello(name, emoji):
+    print(f'Helloooo there {name} {emoji}')
+
+#here prath and :d are aguments
+# they are also called positional arguments as their order is fixed
+# positional arguments
+say_hello('Prath', ':D')
+
+#keyword Arguments
+say_hello(emoji=':d', name='Dipa')
+
+def say_gm(name='Prath', surname='Rahate'):
+    print(f'Good Morning! {name} {surname}')
+
+say_gm()
+
+#returning from functions
+# use keyword return to return values from function
+def sum(num1, num2):
+    return num1 + num2
+
+print(sum(3,5))
+
+# functions within functions
+def sum2(num1, num2):
+    def add5(num1, num2):
+        return num1 + num2 + 5
+    return add5(num1, num2)
+
+print(sum2(2,4))
+
+
+# docstrings in python
+# inside function we can define docstrings to give infomration to user about function like what function compile
+def some_func(a):
+    '''
+    INFO: This function prints value passed to it
+    '''
+    print(a)
+
+some_func('Hey')
+# or we can use help function to give info about function
+help(some_func)
