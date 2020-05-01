@@ -45,3 +45,65 @@ def some_func(a):
 some_func('Hey')
 # or we can use help function to give info about function
 help(some_func)
+
+# *args and **kwargs
+# *agrs is used to pass any number of arguments to function
+# internal to function args are tuple to function
+# **kwargs is used to pass any number of key word args to function
+# internal to function kwargs are dictionary
+
+def super_func(*args, **kwargs):
+    print(*args)
+    print(kwargs)
+    print(args)
+    total = 0
+    for items in kwargs.values():
+        total+= items
+    return sum(args) + total
+
+print(super_func(1,2,3,4,5, num1=12, num2=23))
+
+## RUle position of arguments to function
+# params, *args, default_parameters, **kwargs
+
+def superfunc(name, *args, message='Hello', **kwargs):
+    total = 0
+    for items in kwargs.values():
+        total += items
+    print(f'{message} {name}')
+    return sum(args) + total
+
+print(superfunc('prath', 1,2,3, num1=12, num2=12))
+
+## RUle position of arguments to function
+# params, *args, default_parameters, **kwargs
+def superfunc(name, *args, mess='Hello there', **kwargs):
+    total = 0
+    for items in kwargs.values():
+        total += items
+    print(f'{mess} {name}')
+    return sum(args) + total
+
+print(superfunc('prath', 1,2,3,4,5, num1=10, num2=10))
+
+
+def highest_even(li):
+    highest = 0
+    for value in li:
+        if value % 2 == 0:
+            if value > highest:
+                highest = value
+
+    return highest
+
+# more optimised solution
+def highest_even2(li):
+    even = []
+    for value in li:
+        if value % 2 == 0:
+            even.append(value)
+
+    return max(even)
+
+
+print(highest_even2([1,4,6,8,66,55,32,45]))

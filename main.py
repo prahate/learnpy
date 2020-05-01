@@ -445,10 +445,10 @@ say_gm()
 
 #returning from functions
 # use keyword return to return values from function
-def sum(num1, num2):
-    return num1 + num2
+#def sum(num1, num2):
+#    return num1 + num2
 
-print(sum(3,5))
+#print(sum(3,5))
 
 # functions within functions
 def sum2(num1, num2):
@@ -470,3 +470,106 @@ def some_func(a):
 some_func('Hey')
 # or we can use help function to give info about function
 help(some_func)
+
+# *args and **kwargs
+# *agrs is used to pass any number of arguments to function
+# internal to function args are tuple to function
+# **kwargs is used to pass any number of key word args to function
+# internal to function kwargs are dictionary
+
+def super_func(*args, **kwargs):
+    print(*args)
+    print(kwargs)
+    print(args)
+    total = 0
+    for items in kwargs.values():
+        total+= items
+    return sum(args) + total
+
+print(super_func(1,2,3,4,5, num1=12, num2=23))
+
+## RUle position of arguments to function
+# params, *args, default_parameters, **kwargs
+#def superfunc(name, *args, mess='Hello there', **kwargs):
+#    total = 0
+#    for items in kwargs.values():
+#        total += items
+#    print(f'{mess} {name}')
+#    return sum(args) + total
+
+#print(superfunc('prath', 1,2,3,4,5, num1=10, num2=10))
+
+#def highest_even(li):
+#    highest = 0
+#    for value in li:
+#        if value % 2 == 0:
+#            if value > highest:
+#                highest = value
+#    return highest
+
+
+#print(highest_even([1,4,6,8,66,55,88,45]))
+
+#def highest_even2(li):
+#    even = []
+#    for value in li:
+#        if value % 2 == 0:
+#            even.append(value)
+
+#    return max(even)
+
+
+#print(highest_even2([1,4,6,8,66,55,32,45]))
+
+
+
+
+# class in python
+# class in python must follow naming convention like camelcasing
+# creating custom object type
+# class object attribute can not be modified across instances
+
+#class
+class MyObj():
+    pass
+
+obj1 = MyObj() # instantiating class
+print(type(obj1)) # obj1 is instance of class
+
+class PlayerCharacter:
+    #class object attribute
+    membership = True
+    def __init__(self, name, age):
+        self.name = name    # these are class attributes
+        self.age = age
+
+    def run(self):
+        print('Run')
+
+
+
+player1 = PlayerCharacter('Harry', 29)
+print(player1.name)
+print(player1.age)
+print(player1.membership)
+
+
+#Given the below class:
+class Cat:
+    species = 'mammal'
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+
+# 1 Instantiate the Cat object with 3 cats
+cat1 = Cat('Billy', 2)
+cat2 = Cat('Tom', 3)
+cat3 = Cat('Meow', 1)
+
+
+# 2 Create a function that finds the oldest cat
+def find_elder_cat(*args):
+    return max(args)
+
+print(f'The Oldest cat is {find_elder_cat(cat1.age, cat2.age, cat3.age)} years old')
