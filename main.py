@@ -546,12 +546,31 @@ class PlayerCharacter:
     def run(self):
         print('Run')
 
+# classmethods
+# they are defined with @classmethod
+# class methods can be used without instantiating class
+    @classmethod 
+    def add_nums(cls, num1, num2):
+        return num1 + num2
+
+#class methods can be used to instantiate objects
+#   @classmethod
+#   def add_nums(cls, num1, num2):
+#       return cls('Johnny', (num1 + num2))
+
+# @staticmethod are similar to class methods except they dont have
+# cls arguments
+    @staticmethod
+    def add_num2(num1, num2):
+        return num1 + num2
+
 
 
 player1 = PlayerCharacter('Harry', 29)
 print(player1.name)
 print(player1.age)
 print(player1.membership)
+print(PlayerCharacter.add_nums(5,7))
 
 
 #Given the below class:
@@ -573,3 +592,106 @@ def find_elder_cat(*args):
     return max(args)
 
 print(f'The Oldest cat is {find_elder_cat(cat1.age, cat2.age, cat3.age)} years old')
+
+# encapsulation
+# binding of attributes and methods that manipulate data in object
+
+#abstraction
+# hiding information or only giving access to what is neccessary
+# private and public variables
+# python does not have private variables, only the syntax like appending the variable with '_' will signify to user that it is private variable
+
+#inheritance
+# inherit the properties of parent class
+
+class User():
+    def __init__(self, email):
+        self.email = email
+
+    def sign_in(self):
+        print('Signed in')
+
+    def attack(self):
+        print('Do nothing')
+
+# Here Archer and wizard class inherit User class as parent
+class Archer(User):
+    def __init__(self, name, arrows, email):
+        # super refers to parent class here it is User
+        # it allowsa calling parent class's init method without passing self as argument and initialise email as shown below
+        super().__init__(email)
+        self.name = name
+        self.arrows = arrows
+    
+    def attack(self):
+        User.attack(self)   # calling parents methond inside child
+        print(f'Attacking with {self.name} and arrows {self.arrows}')
+
+class Wizard(User):
+    def __init__(self, name, power):
+        self.name = name
+        self.power = power
+    
+    def attack(self):
+        print(f'Attacking with {self.name} and power {self.power}')
+    pass
+
+archer = Archer('Johnny', 20, 'jhonny@yahoo.com')
+wizard = Wizard('Jack', 50)
+
+print(archer.email)
+wizard.attack()
+
+
+# functional Programming
+# separation of data and functions, data and functions/methods are not combined in object similar to classes, they are separate entities
+
+#pure functions
+# two basic rules
+#1 given same set of input it produce same output everytime
+#2 function should not produce any sideeffect i.e. it should not affect or interact with outside world/data such as printing inside function or modifying outside variables that are not part of function itslef
+
+#def multiply_by2(li):
+#    new_list = []
+#    for item in li:
+#        new_list.append(item*2)
+#    return new_list
+
+#print(multiply_by2([1,2,3,4]))
+
+# few functions that represent pure functions
+# map, filter, zip and reduce
+
+# map(action, data)
+
+new_list = [1,2,3,4,5]
+def multiply_by2(li):
+    return li * 2
+
+# map object need to be converted to list as it returns an object
+print(list(map(multiply_by2, new_list)))
+print(new_list)
+
+# filter(action, data)
+# filter can return less number of data 
+def get_odd(item):
+    return item % 2 != 0
+
+print(list(filter(get_odd, new_list)))
+
+# zip, zips two or many iterables into one
+my_list = [3,5,6,7,8]
+print(list(zip(new_list, my_list)))
+
+# reduce is not built in function
+# it has to be imported from functools
+from functools import reduce
+
+def accumulator(acc, item):
+    return acc + item
+
+# here 0 is the default or initial value of acc
+print(reduce(accumulator, [1,2,3,4,5,6,7,8,9], 0))
+
+
+

@@ -20,6 +20,41 @@ class PlayerCharacter:
     def run(self):
         print('Run')
 
+#class methods can be used to instantiate objects
+#   @classmethod
+#   def add_nums(cls, num1, num2):
+#       return cls('Johnny', (num1 + num2))
+
+# @staticmethod are similar to class methods except they dont have
+# cls arguments
+    @staticmethod
+    def add_num2(num1, num2):
+        return num1 + num2
+
+# encapsulation
+# binding of attributes and methods that manipulate data in object
+
+#abstraction
+# hiding information or only giving access to what is neccessary
+# private and public variables
+# python does not have private variables, only the syntax like appending the variable with '_' will signify to user that it is private variable
+
+#inheritance
+# inherit the properties of parent class
+
+class User():
+    def sign_in(self):
+        print('Signed in')
+
+class Archer(User):
+    pass
+
+class Wizard(User):
+    pass
+
+archer = Archer()
+archer.sign_in()
+
 
 
 player1 = PlayerCharacter('Harry', 29)
