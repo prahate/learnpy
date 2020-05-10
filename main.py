@@ -694,4 +694,20 @@ def accumulator(acc, item):
 print(reduce(accumulator, [1,2,3,4,5,6,7,8,9], 0))
 
 
+#lambda expressions are functions that are annonymous and used only once
+# they are defined as below
+# lambda param: action(param)
+# multiply_by2 can be implemented using lambda expression as follows
+
+print(list(map(lambda item: item*2, my_list)))
+
+my_list2 = [5,4,3]
+
+print(list(map(lambda item: item* item, my_list2)))
+
+# little tough one
+a = [(0,2), (4,3), (9,9), (10, -1)]
+a.sort(key=lambda x: x[1])
+print(a)
+
 
