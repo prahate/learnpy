@@ -710,4 +710,45 @@ a = [(0,2), (4,3), (9,9), (10, -1)]
 a.sort(key=lambda x: x[1])
 print(a)
 
+# list, set and dictionary comprehensions
+# list comprehensions
+
+my_list = []
+for char in 'hello':
+    my_list.append(char)
+
+#print(my_list)
+
+# all of the above can be done in single line using list comprehensions
+# my_list = [param for param in interable]
+my_li = [char for char in 'Hellooo' ]
+#print(my_li)
+
+my_li2 = [num for num in range(100)]
+#print(my_li2)
+
+my_li3 = [num for num in range(100) if num % 2 == 0]
+#print(my_li3)
+
+# all numbers are multiplied by 2
+my_li4 = [num*2 for num in range(0,100)]
+#print(my_li4)
+
+#set comprehensions
+# in list comprehensions just chnage [] to {}
+my_set = {char for char in 'Hellooo'}
+#print(my_set)
+
+#Dictionary comprehensions
+simple_dict = {
+    'a' : 2,
+    'b' : 3
+}
+
+my_dict = {key:value**2 for key,value in simple_dict.items()}
+
+#print(my_dict)
+
+my_dict2 = {num:num**2 for num in [1,2,3]}
+#print(my_dict2)
 
